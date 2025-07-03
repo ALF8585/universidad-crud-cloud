@@ -17,3 +17,6 @@ def listar_universidades():
 def listar_carreras():
     carreras = Carrera.query.all()
     return render_template('carreras.html', carreras=carreras)
+if __name__ == '__main__':
+    app.run(debug=True)
+
