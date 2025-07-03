@@ -1,1 +1,33 @@
+<!-- app/templates/carreras.html -->
+{% extends "base.html" %}
+
+{% block title %}Carreras{% endblock %}
+
+{% block content %}
+<h2 class="subtitle">Lista de Carreras</h2>
+<table class="table is-striped is-fullwidth">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Universidad ID</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in carreras %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.universidad_id }}</td>
+            <td>
+                <a href="/carreras/editar/{{ c.id }}" class="button is-small is-warning">Editar</a>
+                <a href="/carreras/eliminar/{{ c.id }}" class="button is-small is-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/carreras/crear" class="button is-primary">Crear nueva carrera</a>
+{% endblock %}
 
