@@ -1,3 +1,4 @@
+from models import Universidad, Carrera
 from app import db
 
 class Estudiante(db.Model):
