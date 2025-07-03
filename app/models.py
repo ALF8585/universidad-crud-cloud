@@ -1,5 +1,6 @@
-from models import Universidad, Carrera
-from app import db
+from app.models import Universidad, Carrera
+from app.routes import app
+
 
 class Estudiante(db.Model):
     id = db.Column(db.Integer, primary_key=True)
