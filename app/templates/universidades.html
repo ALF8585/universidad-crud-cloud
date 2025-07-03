@@ -1,1 +1,31 @@
+<!-- app/templates/universidades.html -->
+{% extends "base.html" %}
+
+{% block title %}Universidades{% endblock %}
+
+{% block content %}
+<h2 class="subtitle">Lista de Universidades</h2>
+<table class="table is-striped is-fullwidth">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for u in universidades %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.nombre }}</td>
+            <td>
+                <a href="/universidades/editar/{{ u.id }}" class="button is-small is-warning">Editar</a>
+                <a href="/universidades/eliminar/{{ u.id }}" class="button is-small is-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/universidades/crear" class="button is-primary">Crear nueva universidad</a>
+{% endblock %}
 
